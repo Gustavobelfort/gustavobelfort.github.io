@@ -28,10 +28,6 @@
 
 body {
     background-color: #9999;
-    width: 100vh;
-    height: 85vh;
-    margin: 0 auto;
-    padding: 0;
 }
 
 .buto {
@@ -62,7 +58,8 @@ body {
     background-color: #e0e0e0;
     border-radius: 0px 0px 20px 20px;
     width: inherit;
-    height: 10%;
+    height: 20%;
     bottom: 0;
     position: absolute;
 }
+
