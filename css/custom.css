@@ -9,8 +9,8 @@
     width: 48px;
     height: 48px;
     position: relative;
-    margin: -25px 0 0 86px;
-    transform: rotate(-90deg);
+    margin: 0px 0 0 86px;
+    transition: transform 1s;
 }
 
 #logo {
@@ -45,10 +45,10 @@ body {
 #card {
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    margin: 25% auto;
     position: relative;
     background: url("/Assets/lite%20gray.jpg");
     filter: opacity(50%);
+    margin: auto;
     height: 350px;
     width: 220px;
     overflow: hidden;
@@ -59,8 +59,11 @@ body {
     background-color: #e0e0e0;
     border-radius: 0px 0px 20px 20px;
     width: inherit;
-    height: 30%;
+    height: 80%;
     bottom: 0;
     position: absolute;
 }
 
+.toggleRotation{
+    transform: rotate(-180deg);
+}
