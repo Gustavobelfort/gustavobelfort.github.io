@@ -4,25 +4,30 @@
 }
 
 #circle {
-    background-color: rgba(3, 3, 3, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
     border-radius: 50px;
     width: 48px;
     height: 48px;
+    padding: 10px;
     position: relative;
-    margin: 0px 0 0 86px;
+    overflow: visible;
+    margin: 25px auto;
     transition: transform 1s;
 }
 
 #logo {
     position: relative;
+    overflow: hidden;
     display: block;
     width: 220px;
     height: 220px;
     background-color: #fff;
     margin: 15px auto;
-    border-radius: 50%;
+    border: 5px solid gray;
+    border-radius:5%;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
-    filter: opacity(40%);
+    filter: opacity(80%);
 
 }
 
@@ -42,28 +47,61 @@ body {
 
 }
 
-#card {
+#card1 {
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     position: relative;
-    background: url("/Assets/lite%20gray.jpg");
-    filter: opacity(50%);
+    background: url("/Assets/sd.jpg");
+    filter: opacity(90%);
     margin: auto;
     height: 350px;
     width: 220px;
     overflow: hidden;
 }
 
+#card2 {
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    position: relative;
+    background: url("/Assets/placeholder.png");
+    filter: opacity(90%);
+    margin: auto;
+    height: 350px;
+    width: 220px;
+    overflow: hidden;
+}
+
+#card3 {
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    position: relative;
+    background: url("/Assets/placeholder.png");
+    filter: opacity(90%);
+    margin: auto;
+    height: 350px;
+    width: 220px;
+    overflow: hidden;
+}
+
+
 #fundo {
     box-shadow: 0 -1px 8px 0 rgba(0, 0, 0, 0.5);
     background-color: #e0e0e0;
     border-radius: 0px 0px 20px 20px;
     width: inherit;
-    height: 80%;
+    height: 90%;
     bottom: 0;
     position: absolute;
 }
 
 .toggleRotation{
     transform: rotate(-180deg);
+}
+
+#sd{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
