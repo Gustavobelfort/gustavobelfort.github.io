@@ -5,24 +5,70 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.fullPage.js"></script>
+    
     <title>Gustavo Belfort - Under Construction</title>
+
+    
 </head>
 
 <body>
-    <div id="logo">
-        <img id="lgi" src="/Assets/logo.jpg" width="60px" alt="">
+   
+    <div id="fullpage">
+
+
+        <div class="section">
+            <div id="logo">
+
+                <img id="lgi" src="/Assets/logo.jpg" width="60px" alt="">
+            </div>
+            <div id="card">
+
+                <div id="fundo">
+                    <div id="circle">
+                        <img src="/Assets/if_ic_keyboard_arrow_right_48px_352468.svg" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div id="card">
+
+                <div id="fundo">
+                    <div id="circle">
+                        <img src="/Assets/if_ic_keyboard_arrow_right_48px_352468.svg" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="section">
+            <div id="card">
+
+                <div id="fundo">
+                    <div id="circle">
+                        <img src="/Assets/if_ic_keyboard_arrow_right_48px_352468.svg" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </div>
     
-    <div id="card">
-
-        <div id="fundo">
-            <div id="circle">
-                <img src="/Assets/if_ic_keyboard_arrow_right_48px_352468.svg" alt="">
-            </div>
-
-        </div>
-
-    </div>
+    <script>
+       $(document).ready(function() {
+	$('#fullpage').fullpage();
+});
+    </script>
+    
 </body>
 
 </html>
