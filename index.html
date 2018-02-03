@@ -9,27 +9,28 @@
     <link rel="stylesheet" type="text/css" href="/css/jquery.fullPage.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/jquery.fullPage.js"></script>
-    
+
     <title>Gustavo Belfort - Under Construction</title>
 
-    
+
 </head>
 
 <body>
-   
-    <div id="fullpage">
 
+    <div id="fullpage">
+        <div class="section">
+            <img id="logo" src="/Assets/logo.jpg" alt="logo">
+        </div>
 
         <div class="section">
-
             <div id="card">
-                
+
                 <div class="toggleRotation" id="circle">
-                        <img src="/Assets/if_ic_keyboard_arrow_right_48px_352468.svg" alt="">
-                    </div>
+                    <img src="/Assets/if_ic_keyboard_arrow_right_48px_352468.svg" alt="">
+                </div>
 
                 <div id="fundo">
-                    
+
 
                 </div>
 
@@ -60,21 +61,21 @@
             </div>
         </div>
     </div>
-    
+
     <script>
-       $(document).ready(function() {
-	$('#fullpage').fullpage();
-});
+        $(document).ready(function() {
+            $('#fullpage').fullpage();
+        });
     </script>
-        <script>
-        $("#circle").click( function(){
+    <script>
+        $("#circle").click(function() {
             $("#circle").toggleClass("toggleRotation");
             $("#fundo").slideToggle("slow");
-            
+
 
         });
     </script>
-    
+
 </body>
 
 </html>

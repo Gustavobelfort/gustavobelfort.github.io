@@ -16,11 +16,11 @@
 #logo {
     position: relative;
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 220px;
+    height: 220px;
     background-color: #fff;
     margin: 15px auto;
-    border-radius: 100px;
+    border-radius: 50%;
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
     filter: opacity(40%);
 
