@@ -3,7 +3,7 @@
     margin: 15px;
 }
 
-#circle {
+.circle {
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
     border-radius: 50px;
@@ -62,13 +62,12 @@ body {
 #card2 {
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    position: relative;
+    position: absolute;
     background: url("/Assets/placeholder.png");
     filter: opacity(90%);
-    margin: auto;
     height: 350px;
     width: 220px;
-    overflow: hidden;
+    overflow: show;
 }
 
 #card3 {
@@ -84,14 +83,26 @@ body {
 }
 
 
-#fundo {
+.fundo {
     box-shadow: 0 -1px 8px 0 rgba(0, 0, 0, 0.5);
     background-color: #e0e0e0;
+    display: none;
     border-radius: 0px 0px 20px 20px;
     width: inherit;
-    height: 90%;
+    height: 25%;
     bottom: 0;
     position: absolute;
+
+}
+
+.fundo2{
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 20px;
+  margin: auto;
+  padding: 50px;
 }
 
 .toggleRotation{
@@ -104,4 +115,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 
+}
+
+.github_logo{
+  width: 60px;
+  height: 60px;
+  margin: 10px;
 }

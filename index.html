@@ -24,47 +24,43 @@
 
         <div class="section">
             <div id="card1">
-                
-                <div id="fundo">
+
+                <div class="fundo">
+                  <img src="./Assets/github_logo.svg" class="github_logo" alt="">
 
                 </div>
-                
+
             </div>
 
-                <div class="toggleRotation" id="circle">
+                <div class="toggleRotation circle">
                     <img src="/Assets/down-arrow.svg" alt="">
             </div>
-            
+
         </div>
         <div class="section">
-            <div id="card2">
-                
-                <div id="fundo">
+            <div class="fundo2">
+              <div id="card2">
 
-                </div>
-                
             </div>
+          </div>
 
-                <div class="toggleRotation" id="circle">
-                    <img src="/Assets/down-arrow.svg" alt="">
-            </div>
-            
-        </div>
+
+
+      </div>
         <div class="section">
-            <div id="card3">
-                
-                <div id="fundo">
+          <div id="card3">
 
-                </div>
-                
-            </div>
+              <div class="fundo">
 
-                <div class="toggleRotation" id="circle">
-                    <img src="/Assets/down-arrow.svg" alt="">
-            </div>
-            
-        </div>
-    </div>
+              </div>
+
+          </div>
+
+              <div class="toggleRotation circle">
+                  <img src="/Assets/down-arrow.svg" alt="">
+          </div>
+
+      </div>
 
     <script>
         $(document).ready(function() {
@@ -72,9 +68,9 @@
         });
     </script>
     <script>
-        $("#circle").click(function() {
-            $("#circle").toggleClass("toggleRotation");
-            $("#fundo").slideToggle("slow");
+        $(".circle").click(function() {
+            $(".circle").toggleClass("toggleRotation");
+            $(".fundo").slideToggle("slow");
 
 
         });
