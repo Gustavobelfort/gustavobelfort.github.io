@@ -1,0 +1,64 @@
+{
+   "name": "~",
+   "type": "dir",
+   "contents": [
+      {
+         "name": "README.md",
+         "type": "text",
+         "contents": "Hello there! My Name is Gustavo Belfort 👋🏻.\n\n💡 I'm a Software/DevOps Engineer\n\n⛓ I'm extremely passionate about blockchain and decentralized technologies. By the way, this website is also available on IPFS 🚀.\n\n💬 You can contact me at:\n    - Email: <a class=\"exec\" href=\"mailto:gustavo@belfort.dev\">gustavo@belfort.dev</a>\n    - Github: <a class=\"exec\" target =\"_blank\" href=\"https://github.com/GustavoBelfort\">GustavoBelfort</a>\n    - LinkedIn: <a class=\"exec\" target =\"_blank\" href=\"https://www.linkedin.com/in/gustavo-belfort/\">linkedin.com/in/gustavo-belfort</a>\n\n"
+      },
+      {
+         "name": "resume.pdf",
+         "type": "exec",
+         "contents": "/assets/pdf/resume.pdf"
+      },     
+      {
+         "name": "projects",
+         "type": "dir",
+         "contents": [
+            {
+               "name": "Terraform OpenEthereum",
+               "type": "exec",
+               "contents": "https://github.com/Gustavobelfort/terraform-openethereum",
+               "description": "Terraform IaC to deploy an openethereum containerized node on aws"
+            },
+            {
+               "name": "OpenEthereum Lambda",
+               "type": "exec",
+               "contents": "https://github.com/Gustavobelfort/openethereum-lambda",
+               "description": "Terraform IaC that deploys an AWS lambda hosted application to interact with ethereum rpc endpoints"
+            },
+            {
+               "name": "Terraform Ghost",
+               "type": "exec",
+               "contents": "https://github.com/Gustavobelfort/ghost",
+               "description": "Terraform IaC that deploys deploys a fully working ghost blog in AWS with domain management and caching managed thru Cloudflare"
+            },
+            {
+               "name": "42 Jitsi",
+               "type": "exec",
+               "contents": "https://github.com/Gustavobelfort/42-jitsi",
+               "description": "Golang application to manage and deploy a jitsi web meeting platform integrated with École 42 p2p student evaluation systems"
+            }
+        ]
+      },
+      {
+         "name": "images",
+         "type": "dir",
+         "contents": [
+            {
+               "name": "selfie.png",
+               "type": "img",
+               "contents": "/assets/images/selfie.png",
+               "caption": "Thats's me."
+            },
+            {
+               "name": "nft-pfp.png",
+               "type": "img",
+               "contents": "/assets/images/nft-pfp.png",
+               "caption": "Yeah, I'm into NFTs."
+            }
+        ]
+      }
+   ]
+}

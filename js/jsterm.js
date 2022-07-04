@@ -1,17 +1,3 @@
-// Copyright 2013 Clark DuVall
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 (function() {
    if (typeof Object.create !== 'function') {
       Object.create = function (o) {
@@ -193,7 +179,6 @@
             return [];
 
          if (parts.length == 1) {
-            // TODO: Combine with below.
             var pathParts = parts[0].replace(/[\/]+/, '/').split('/'),
                 last = pathParts.pop(),
                 dir = (pathParts.length > 0) ? this.getEntry(pathParts.join('/')) : this.cwd,
@@ -462,9 +447,10 @@
 
          this._resetID('#stdout');
          stdout.id = 'stdout';
+         stdout.classList.add("output")
          output.appendChild(stdout);
          this.div.appendChild(output);
-
+         
          if (command && command.length) {
             if (command in this.commands) {
                this.commands[command](args, function() {
@@ -492,13 +478,15 @@
    }
 
    var term = Object.create(Terminal);
-   term.init(CONFIG, '/json/sample.json', COMMANDS, function() {
+   term.init(CONFIG, '/assets/json/filesystem.json', COMMANDS, function() {
       term.enqueue('login')
           .enqueue('gustavo')
           .enqueue('******')
-          .enqueue('cat HelloWorld.txt')
+          .enqueue('cat README.md')
           .enqueue('help')
+          .enqueue('cd projects')
           .enqueue('ls -l')
+          .enqueue('cd ..')
           .enqueue('tree')
           .begin();
    });
