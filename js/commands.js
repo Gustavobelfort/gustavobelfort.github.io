@@ -1,17 +1,3 @@
-// Copyright 2013 Clark DuVall
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 var COMMANDS = COMMANDS || {};
 
 COMMANDS.cat =  function(argv, cb) {
@@ -134,19 +120,10 @@ COMMANDS.clear = function(argv, cb) {
 }
 
 COMMANDS.sudo = function(argv, cb) {
-   var count = 0;
-   this._terminal.returnHandler = function() {
-      if (++count < 3) {
-         this.write('<br/>Sorry, try again.<br/>');
-         this.write('[sudo] password for ' + this.config.username + ': ');
-         this.scroll();
-      } else {
-         this.write('<br/>sudo: 3 incorrect password attempts');
-         cb();
-      }
-   }.bind(this._terminal);
-   this._terminal.write('[sudo] password for ' + this._terminal.config.username + ': ');
+   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+   this._terminal.write('Sorry for that.');
    this._terminal.scroll();
+   cb();
 }
 
 COMMANDS.login = function(argv, cb) {
@@ -161,8 +138,8 @@ COMMANDS.login = function(argv, cb) {
       this.returnHandler = function() { cb(); }
    }.bind(this._terminal);
    this._terminal.write('Username: ');
-   this._terminal.newStdout();
    this._terminal.scroll();
+   this._terminal.newStdout();
 }
 
 COMMANDS.tree = function(argv, cb) {
@@ -194,16 +171,16 @@ COMMANDS.tree = function(argv, cb) {
 
 COMMANDS.help = function(argv, cb) {
    this._terminal.write(
-       'Você pode navegar clicando em palavras ' +
-       '<a href="javascript:void(0)">sublinhadas</a>' +
-       ', ou digitando comandos no terminal. Digite o nome de um ' +
-       '<span class="exec">link</span> para visualiza-lo. Use "cd" para entrar em uma ' +
-       '<span class="dir">pasta</span>, ou use "ls" para listar o conteúdo ' +
-       'dessa pasta. Os conteúdos de um <span class="text">arquivo</span> ' +
-       'podem ser vistos usando o comando "cat". <span class="img">Imagens</span> são ' +
-       'exibidas usando o comando "gimp".<br><br>Se você desejar sair de um comando, ' +
-       'basta pressionar Ctrl+C ou Ctrl+D.<br><br>');
-   this._terminal.write('Os comandos disponíveis são:<br>');
+      'You can navigate either by clicking on anything that ' +
+      '<a href="javascript:void(0)">underlines</a> when you put your mouse ' +
+      'over it, or by typing commands in the terminal.\nType the name of a ' +
+      '<span class="exec">link</span> to view it.\nUse "cd" to change into a ' +
+      '<span class="dir">directory</span>, or use "ls" to list the contents ' +
+      'of that directory.\nThe contents of a <span class="text">file</span> ' +
+      'can be viewed using "cat".\n<span class="img">Images</span> are ' +
+      'displayed using "gimp".\n\nIf there is a command you want to get ' +
+      'out of, press Ctrl+C or Ctrl+D.<br><br>');
+  this._terminal.write('Available commands are:<br>');
    for (var c in this._terminal.commands) {
       if (this._terminal.commands.hasOwnProperty(c) && !c.startswith('_'))
          this._terminal.write(c + '  ');
