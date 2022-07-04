@@ -5,7 +5,7 @@
       {
          "name": "README.md",
          "type": "text",
-         "contents": "Hello there! My Name is Gustavo Belfort 👋🏻.\n\n💡 I'm a Software/DevOps Engineer\n\n⛓ I'm extremely passionate about blockchain and decentralized technologies. By the way, this website is also available on IPFS 🚀.\n\n💬 You can contact me at:\n    - Email: <a class=\"exec\" href=\"mailto:gustavo@belfort.dev\">gustavo@belfort.dev</a>\n    - Github: <a class=\"exec\" target =\"_blank\" href=\"https://github.com/GustavoBelfort\">GustavoBelfort</a>\n    - LinkedIn: <a class=\"exec\" target =\"_blank\" href=\"https://www.linkedin.com/in/gustavo-belfort/\">linkedin.com/in/gustavo-belfort</a>\n\n"
+         "contents": "Hello there! My Name is Gustavo Belfort 👋🏻.\n\n💡 I'm a Software/DevOps Engineer\n\n⛓ I'm extremely passionate about blockchain and decentralized technologies. By the way, this website is also available on <a class=\"exec\" href=\"ipfs.gustavo.belfort.dev\">IPFS</a> 🚀.\n\n💬 You can contact me at:\n    - Email: <a class=\"exec\" href=\"mailto:gustavo@belfort.dev\">gustavo@belfort.dev</a>\n    - Github: <a class=\"exec\" target =\"_blank\" href=\"https://github.com/GustavoBelfort\">GustavoBelfort</a>\n    - LinkedIn: <a class=\"exec\" target =\"_blank\" href=\"https://www.linkedin.com/in/gustavo-belfort/\">linkedin.com/in/gustavo-belfort</a>\n\n"
       },
       {
          "name": "resume.pdf",
