@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BootSequence from '../components/BootSequence.astro';
+import Header from '../components/Header.astro';
+import TabNav from '../components/TabNav.astro';
+import Footer from '../components/Footer.astro';
+import StatusTab from '../components/tabs/StatusTab.astro';
+import SkillsTab from '../components/tabs/SkillsTab.astro';
+import QuestsTab from '../components/tabs/QuestsTab.astro';
+import GearTab from '../components/tabs/GearTab.astro';
+import BlogTab from '../components/tabs/BlogTab.astro';
+import ContactTab from '../components/tabs/ContactTab.astro';
+---
+<BaseLayout>
+  <BootSequence />
+
+  <div id="egg">
+    <canvas id="egg-canvas" width="64" height="64" style="width:128px;height:128px;"></canvas>
+    <div class="egg-title">&#9733; ACHIEVEMENT UNLOCKED &#9733;</div>
+    <div class="egg-sub">[ KONAMI CODE MASTER ]</div>
+    <div class="egg-msg">You found the secret! Gustavo sees you, keyboard warrior.<br><br>Fun fact: this entire portfolio runs on Astro<br>with zero client-side frameworks. Pretty cozy in here.<br><br><a href="/terminal/" style="color:var(--amber);text-decoration:underline;">Enter the terminal &rsaquo;</a></div>
+    <button class="egg-close" id="egg-close">[ PRESS START ]</button>
+    <div class="konami-hint">&uarr;&uarr;&darr;&darr;&larr;&rarr;&larr;&rarr;BA</div>
+  </div>
+
+  <div id="app">
+    <Header />
+    <TabNav />
+    <div class="panel">
+      <StatusTab />
+      <SkillsTab />
+      <QuestsTab />
+      <GearTab />
+      <BlogTab />
+      <ContactTab />
+    </div>
+    <Footer />
+  </div>
+</BaseLayout>

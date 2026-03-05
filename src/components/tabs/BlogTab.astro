@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const categoryColors: Record<string, string> = {
+  devops: 'tag-devops',
+  blockchain: 'tag-blockchain',
+  security: 'tag-security',
+  infra: 'tag-infra',
+  writeup: 'tag-writeup',
+};
+---
+<div class="pane" id="pane-blog">
+  <div class="sec">BLOG &middot; TECHNICAL WRITE-UPS</div>
+  <div class="blog-list-view" id="blog-list-view">
+    <p class="blog-intro">Infrastructure deep-dives, incident post-mortems, blockchain ops notes, and homelab experiments. I write the posts I wish existed when I was debugging at 2am.</p>
+    <div class="blog-filter">
+      <button class="bf-btn on" data-cat="all">ALL</button>
+      <button class="bf-btn" data-cat="devops">DEVOPS</button>
+      <button class="bf-btn" data-cat="blockchain">BLOCKCHAIN</button>
+      <button class="bf-btn" data-cat="infra">INFRA</button>
+      <button class="bf-btn" data-cat="security">SECURITY</button>
+      <button class="bf-btn" data-cat="writeup">WRITE-UP</button>
+    </div>
+    <div class="blog-list">
+      {sortedPosts.map((post) => (
+        <div class={`bpost cat-${post.data.category}`} data-slug={post.slug}>
+          <div class="bpost-stripe"></div>
+          <div class="bpost-body">
+            <div class="bpost-meta">
+              <span class={`bpost-cat ${categoryColors[post.data.category]}`}>{post.data.category.toUpperCase()}</span>
+              <span class="bpost-date">{post.data.date.toISOString().slice(0,10)}</span>
+              <span class="bpost-readtime">{post.data.readtime}</span>
+            </div>
+            <div class="bpost-title">{post.data.title}</div>
+            <div class="bpost-excerpt">{post.data.summary}</div>
+            <div class="bpost-tags">
+              {post.data.tags?.map((tag: string) => (
+                <span class="btag">{tag}</span>
+              ))}
+            </div>
+            <div><span class="bpost-read">READ POST &rsaquo;</span></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="blog-post-full" id="blog-post-full">
+    <button class="bpf-back" id="bpf-back">&#9664; BACK TO POSTS</button>
+    <div id="bpf-content-area"></div>
+  </div>
+</div>
+
+<script>
+// Blog filter
+document.querySelectorAll('.bf-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.bf-btn').forEach(function(b){b.classList.remove('on');});
+    btn.classList.add('on');
+    var cat=(btn as HTMLElement).dataset.cat;
+    document.querySelectorAll('.bpost').forEach(function(p){
+      (p as HTMLElement).style.display=(cat==='all'||p.classList.contains('cat-'+cat))?'':'none';
+    });
+  });
+});
+
+// Blog post click -> navigate to full post page
+document.querySelectorAll('.bpost').forEach(function(card){
+  card.addEventListener('click',function(){
+    var slug=(card as HTMLElement).dataset.slug;
+    if(slug) window.location.href='/blog/'+slug+'/';
+  });
+});
+</script>

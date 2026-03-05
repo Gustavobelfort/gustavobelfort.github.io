@@ -1,0 +1,73 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Gustavo | Senior SRE \u00B7 DevOps \u00B7 DevSecOps \u00B7 Blockchain Infrastructure',
+  description = 'Senior Site Reliability Engineer and DevOps consultant. Kubernetes, GitOps, multi-cloud, blockchain validator ops, DevSecOps. Available for remote USD contracts.'
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="SRE, Site Reliability Engineer, DevOps, DevSecOps, Platform Engineer, Kubernetes, GitOps, ArgoCD, Terraform, Crossplane, GCP, AWS, blockchain, validator, Solana, Chainflip, EigenLayer, remote consultant">
+  <meta property="og:title" content="Gustavo — Senior SRE \u00B7 DevOps \u00B7 Blockchain Infrastructure">
+  <meta property="og:description" content="Founder of Hephaestus Labs. Kubernetes grandmaster, multi-cloud architect, blockchain validator operator. Remote USD contracts.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    @import '../styles/global.css';
+  </style>
+</head>
+<body>
+  <div id="crt"></div>
+  <div class="stars" id="stars"></div>
+  <slot />
+  <script>
+    // Star field
+    (function(){
+      var c=document.getElementById('stars');
+      if(!c) return;
+      for(var i=0;i<55;i++){
+        var s=document.createElement('div');s.className='star';
+        var z=Math.random()<.4?2:1;
+        s.style.cssText='width:'+z+'px;height:'+z+'px;left:'+(Math.random()*100)+'vw;top:'+(Math.random()*100)+'vh;--d:'+(2+Math.random()*5)+'s;--dl:'+(Math.random()*5)+'s;';
+        c.appendChild(s);
+      }
+    })();
+
+    // Konami code
+    (function(){
+      var seq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'],pos=0;
+      document.addEventListener('keydown',function(e){
+        if(e.key===seq[pos]){pos++;if(pos===seq.length){pos=0;showEgg();}}else{pos=e.key===seq[0]?1:0;}
+      });
+      function showEgg(){
+        var cv=document.getElementById('egg-canvas') as HTMLCanvasElement;
+        if(!cv) return;
+        var cx=cv.getContext('2d');
+        if(!cx) return;
+        cx.clearRect(0,0,64,64);
+        function r(x:number,y:number,w:number,h:number,c:string){cx!.fillStyle=c;cx!.fillRect(x,y,w,h);}
+        var g='#ffd166',gD='#b07820',gL='#ffe8a0',wt='#f2e8d8',ac='#f0a030';
+        r(20,54,24,4,g);r(22,52,20,3,g);r(26,50,12,3,g);r(28,42,8,9,gD);r(29,42,6,9,g);
+        r(16,22,32,22,g);r(17,23,30,20,g);r(18,22,28,21,gL);r(14,20,36,4,g);r(14,20,36,2,gL);
+        r(10,24,6,12,g);r(48,24,6,12,g);r(10,24,3,12,gD);r(51,24,3,12,gD);
+        r(22,24,8,3,gL);r(22,27,4,2,gL);r(30,14,4,4,wt);r(28,16,8,2,wt);r(29,15,6,4,wt);
+        document.getElementById('egg')?.classList.add('show');
+      }
+      document.getElementById('egg-close')?.addEventListener('click',function(){
+        document.getElementById('egg')?.classList.remove('show');
+      });
+    })();
+  </script>
+</body>
+</html>

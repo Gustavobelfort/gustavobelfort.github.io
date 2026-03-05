@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const categoryColors: Record<string, string> = {
+  devops: 'tag-devops',
+  blockchain: 'tag-blockchain',
+  security: 'tag-security',
+  infra: 'tag-infra',
+  writeup: 'tag-writeup',
+};
+---
+<BaseLayout title={`${post.data.title} | Gustavo`}>
+  <div id="crt"></div>
+  <div class="stars" id="stars"></div>
+  <div id="app" class="visible">
+    <div class="panel" style="border:2px solid var(--amber);">
+      <a class="bpf-back" href="/">&#9664; BACK TO PORTFOLIO</a>
+      <span class={`bpf-cat ${categoryColors[post.data.category]}`}>{post.data.category.toUpperCase()}</span>
+      <div class="bpf-title">{post.data.title}</div>
+      <div class="bpf-byline">
+        <span>&#9632; {post.data.date.toISOString().slice(0,10)}</span>
+        <span>&#9632; {post.data.readtime}</span>
+        <span>&#9632; GUSTAVO / HEPHAESTUS LABS</span>
+      </div>
+      <div class="bpf-content">
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
