@@ -1,0 +1,23 @@
+---
+---
+<div class="tabs">
+  <button class="tab on" data-t="status">[ STATUS ]</button>
+  <button class="tab" data-t="skills">[ SKILLS ]</button>
+  <button class="tab" data-t="quests">[ QUESTS ]</button>
+  <button class="tab" data-t="gear">[ GEAR ]</button>
+  <button class="tab" data-t="blog">[ BLOG ]</button>
+  <button class="tab" data-t="contact">[ CONTACT ]</button>
+</div>
+
+<script>
+document.querySelectorAll('.tab').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var t=(btn as HTMLElement).dataset.t;
+    document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('on');});
+    document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('on');});
+    btn.classList.add('on');
+    var pane = document.getElementById('pane-'+t);
+    if(pane) pane.classList.add('on');
+  });
+});
+</script>

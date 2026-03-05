@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+:root {
+    --cursor-visibility: hidden;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+html,
+body {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    background: #1b1d1e;
+    font-family: "Inconsolata", monospace;
+    font-weight: normal;
+    margin: 1.5rem;
+}
+
+.output {
+   display: inline;
+   line-break: strict;
+   white-space: pre;
+}
+
+#blinker {
+   line-height: .9em;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px white;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px white;
+}
+
+$charcolor: #bbbbbb;
+
+a {
+    color: $charcolor;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+   body {
+      font-size: 4.5vmin;
+      line-height: 4.6vmin;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+   body {
+       font-size: 2vmin;
+       line-height: 2.1vmin;
+   }
+
+}
+
+.jsterm a {
+   color: #E0E0E0;
+   text-decoration: none;
+}
+
+.jsterm a:hover {
+   text-decoration: underline;
+}
+
+.jsterm{
+   display: inline;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column-reverse;
+}
+
+div.jsterm {
+   background: #1b1d1e;
+   color: #E0E0E0;
+}
+
+div.jsterm .host, div.jsterm .host a {
+   color: #5555ff;
+   font-weight: bold;
+}
+
+div.jsterm .user, div.jsterm .user a {
+   color: #ff5555;
+   font-weight: bold;
+}
+
+div.jsterm .cwd, div.jsterm .cwd a {
+   color: #ffff55;
+   font-weight: bold;
+}
+
+div.jsterm .dir, div.jsterm .dir a {
+   color: #5555ff;
+   font-weight: bold;
+}
+
+div.jsterm .link, div.jsterm .link a {
+   color: #5555ff;
+   font-weight: bold;
+}
+
+div.jsterm .exec, div.jsterm .exec a {
+   color: #55ff55;
+   font-weight: bold;
+}
+
+div.jsterm .img, div.jsterm .img a {
+   color: #ff55ff;
+   font-weight: bold;
+}

@@ -1,0 +1,67 @@
+---
+---
+<div id="boot">
+  <div class="boot-outer">
+    <div class="boot-bar-t"><span>&#9632; HEPHAESTUS OS v2.5.1</span><span>&copy; 2025 HEPHAESTUS LABS</span></div>
+    <div class="boot-body">
+      <div id="boot-text"></div>
+      <div class="boot-prog-row"><span class="boot-prog-lbl">LOADING PORTFOLIO.EXE</span><span id="boot-pct">0%</span></div>
+      <div id="boot-progress"><div id="boot-fill"></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+var bootLines=[
+  'HEPHAESTUS OS v2.5.1 \u2014 WELCOME, WANDERER',
+  '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500',
+  'CPU: INFRA-WIZARD @ 4.20GHz ....... OK',
+  'RAM: 64GB CAFFEINE-DDR5 ........... OK',
+  'GPU: PIXEL-ENGINE v9 .............. OK',
+  'NET: MAINNET SYNC ................. OK',
+  'K8S: 25 VALIDATOR NODES ONLINE .... OK',
+  'SEC: DEVSECOPS MODULE ............. OK',
+  'PKM: NEOVIM + NUSHELL ............. OK',
+  '\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500',
+  'SYS: ALL SYSTEMS NOMINAL. THANKS FOR STOPPING BY.',
+  'EXEC: PORTFOLIO.EXE'
+];
+
+function sleep(ms: number){return new Promise(function(r){setTimeout(r,ms);});}
+
+async function boot(){
+  if(sessionStorage.getItem('booted')){
+    var bootDiv=document.getElementById('boot');
+    var appDiv=document.getElementById('app');
+    if(bootDiv) bootDiv.style.display='none';
+    if(appDiv) appDiv.classList.add('visible');
+    document.querySelectorAll('#sbars .sfill').forEach(function(b,i){
+      var el = b as HTMLElement;
+      setTimeout(function(){el.style.width=el.dataset.v+'%';},350+i*180);
+    });
+    return;
+  }
+  var bootText=document.getElementById('boot-text');
+  var bootFill=document.getElementById('boot-fill');
+  var bootPct=document.getElementById('boot-pct');
+  var bootDiv=document.getElementById('boot');
+  var appDiv=document.getElementById('app');
+  if(!bootText||!bootFill||!bootPct||!bootDiv||!appDiv) return;
+  for(var i=0;i<bootLines.length;i++){
+    var d=document.createElement('div');bootText.appendChild(d);
+    var t=bootLines[i];
+    for(var j=0;j<=t.length;j++){d.textContent=t.slice(0,j)+(j<t.length?'\u258C':'');await sleep(12);}
+    var p=Math.round((i+1)/bootLines.length*100);
+    bootFill.style.width=p+'%';bootPct.textContent=p+'%';
+    await sleep(30);
+  }
+  await sleep(500);bootDiv.classList.add('fade');await sleep(700);
+  bootDiv.style.display='none';appDiv.classList.add('visible');
+  sessionStorage.setItem('booted','1');
+  document.querySelectorAll('#sbars .sfill').forEach(function(b,i){
+    var el = b as HTMLElement;
+    setTimeout(function(){el.style.width=el.dataset.v+'%';},350+i*180);
+  });
+}
+boot();
+</script>
