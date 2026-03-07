@@ -1,43 +1,7 @@
 ---
 ---
 <div class="avatar-wrap">
-  <div class="avatar-frame"><canvas id="avatar" width="36" height="36"></canvas></div>
+  <div class="avatar-frame"><img src="/images/pixel-avatar.png" alt="Gustavo pixel art avatar" width="108" height="108" /></div>
   <div class="avatar-sub">SPRITE_0001.PNG</div>
   <div class="lvl-badge">LV.9</div>
 </div>
-
-<script>
-(function(){
-  var cv=document.getElementById('avatar') as HTMLCanvasElement;
-  if(!cv) return;
-  var cx=cv.getContext('2d');
-  if(!cx) return;
-  function r(x:number,y:number,w:number,h:number,c:string|undefined){if(!c)return;cx!.fillStyle=c;cx!.fillRect(x,y,w,h);}
-  var bg='#0d0a06',sk='#c07848',skS='#986038',skD='#6a3c20',bld='#b06840',bhi='#cc8858';
-  var frm='#501800',frl='#6e2e0a',lns='#2e4a58',lnH='#5c8090';
-  var stb='#3e2016',stL='#5a3222',sht='#0a0a14',jkt='#5882a0',jkL='#7aa0bc',jkS='#3a5e7a';
-  var mth='#6e1a08',tth='#baa898',nos='#9a5e30',eye='#1e0c04';
-  r(0,0,36,36,bg);
-  r(0,28,10,8,jkt);r(0,28,3,8,jkL);r(7,28,3,8,jkS);r(26,28,10,8,jkt);r(33,28,3,8,jkL);r(26,28,3,8,jkS);
-  r(10,30,16,6,sht);r(14,26,8,4,sk);r(14,26,8,1,skS);r(15,26,6,1,skD);
-  [[2,13,10],[3,10,16],[4,8,20],[5,7,22],[6,6,24],[7,5,26],[8,5,26],[9,5,26],[10,5,26],[11,5,26],[12,5,26],[13,5,26],[14,5,26],[15,5,26],[16,5,26],[17,5,26],[18,6,24],[19,7,22],[20,8,20],[21,10,16],[22,12,12],[23,14,8],[24,15,6]].forEach(function(v){r(v[1],v[0],v[2],1,sk);});
-  [[2,13,10],[3,10,16],[4,8,20],[5,7,22],[6,6,24],[7,5,26],[8,5,26],[9,5,26],[10,5,26],[11,5,26],[12,5,26],[13,5,26]].forEach(function(v){r(v[1],v[0],v[2],1,bld);});
-  r(9,4,6,1,bhi);r(8,5,7,2,bhi);r(8,7,5,1,bhi);r(9,8,3,1,bhi);
-  [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21].forEach(function(y){r(5,y,1,1,skS);r(30,y,1,1,skS);});
-  r(4,16,2,5,sk);r(4,17,2,3,skS);r(30,16,2,5,sk);r(30,17,2,3,skS);
-  r(10,13,16,1,skS);r(8,14,6,1,skD);r(22,14,6,1,skD);
-  function lC(cx_:number,cy_:number,rad:number,fill:string){for(var dy=-rad;dy<=rad;dy++){var hw=Math.round(Math.sqrt(rad*rad-dy*dy));r(cx_-hw,cy_+dy,hw*2+1,1,fill);}}
-  lC(13,19,5,lns);lC(23,19,5,lns);
-  r(10,16,3,2,lnH);r(10,15,2,1,lnH);r(20,16,3,2,lnH);r(20,15,2,1,lnH);
-  r(12,19,2,2,eye);r(22,19,2,2,eye);
-  function rPts(cx_:number,cy_:number,rad:number){var pts:number[][]=[];for(var a=0;a<360;a+=2){var rd=a*Math.PI/180,px=Math.round(cx_+rad*Math.cos(rd)),py=Math.round(cy_+rad*Math.sin(rd));if(!pts.some(function(p){return p[0]===px&&p[1]===py;}))pts.push([px,py]);}return pts;}
-  [5,6].forEach(function(rr){rPts(13,19,rr).forEach(function(p){r(p[0],p[1],1,1,frm);});rPts(23,19,rr).forEach(function(p){r(p[0],p[1],1,1,frm);});});
-  rPts(13,19,5).filter(function(p){return p[1]<19;}).forEach(function(p){r(p[0],p[1],1,1,frl);});
-  rPts(23,19,5).filter(function(p){return p[1]<19;}).forEach(function(p){r(p[0],p[1],1,1,frl);});
-  r(18,19,2,1,frm);r(18,18,2,1,frl);r(4,17,4,1,frl);r(4,18,3,1,frm);r(29,17,3,1,frl);r(29,18,2,1,frm);
-  r(16,23,4,2,nos);r(14,24,3,2,skD);r(19,24,3,2,skD);r(6,20,3,2,'#c07850');r(27,20,3,2,'#c07850');
-  [[14,25],[15,25],[16,25],[17,25],[18,25],[19,25],[20,25],[21,25],[10,26],[11,26],[13,26],[15,26],[17,26],[19,26],[21,26],[23,26],[25,26],[10,27],[12,27],[14,27],[16,27],[18,27],[20,27],[22,27],[24,27],[25,27],[11,27],[13,27],[15,27],[17,27],[19,27],[21,27],[23,27]].forEach(function(p){r(p[0],p[1],1,1,stb);});
-  [[12,26],[14,26],[16,26],[18,26],[20,26],[22,26],[24,26]].forEach(function(p){r(p[0],p[1],1,1,stL);});
-  r(14,26,8,1,skD);r(13,27,10,2,mth);r(14,27,8,1,tth);r(12,26,2,2,skS);r(22,26,2,2,skS);
-})();
-</script>

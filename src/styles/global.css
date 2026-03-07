@@ -48,7 +48,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .hdr-body{padding:18px;display:flex;gap:20px;align-items:flex-start;}
 .avatar-wrap{flex-shrink:0;position:relative;}
 .avatar-frame{width:108px;height:108px;border:2px solid var(--amber);background:var(--bg3);image-rendering:pixelated;box-shadow:0 0 18px rgba(240,160,48,.2),4px 4px 0 rgba(240,160,48,.08);overflow:hidden;display:flex;align-items:center;justify-content:center;}
-canvas#avatar{image-rendering:pixelated;width:108px;height:108px;}
+.avatar-frame img{image-rendering:pixelated;width:108px;height:108px;display:block;}
 .avatar-sub{text-align:center;font-size:4px;color:var(--amber);margin-top:5px;letter-spacing:1px;opacity:.6;}
 .lvl-badge{position:absolute;top:-10px;right:-10px;background:var(--gold);color:var(--bg);font-size:6px;padding:4px 6px;box-shadow:2px 2px 0 rgba(0,0,0,.5);}
 .char-info{flex:1;min-width:0;}
@@ -304,6 +304,6 @@ canvas#avatar{image-rendering:pixelated;width:108px;height:108px;}
   .char-name{font-size:11px;}
   .tab{font-size:5px;padding:6px 7px;}
   .hdr-body{flex-direction:column;align-items:center;}
-  canvas#avatar,.avatar-frame{width:96px;height:96px;}
+  .avatar-frame,.avatar-frame img{width:96px;height:96px;}
   .bpf-title{font-size:8px;}
 }
